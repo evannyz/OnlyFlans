@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block webcontenido %}
+
+<br><br><br>
+<h1 class="text-center cafe_cuerpo">Has cerrado sesión correctamente,<br>¡Nos vemos pronto! ¡Que tengas un buen día!</h1>
+<div class="container-fluid d-flex justify-content-center mx-auto ">
+    <a href="{% url 'indice' %}">
+        <button type="button" class="btn cafe_cuerpo" style="background: #F5B03E;" >Volver a inicio</button>
+    </a>
+</div>
+
+<br><br><br>
+
+{% endblock %}

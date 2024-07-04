@@ -1,0 +1,42 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg justify-content-between" style="background-color: #F5B03E;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="{% static 'img/logo.png' %}" alt="OnlyFlans Logo" width="80" height="80">OnlyFlans</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" aria-current="page" href="{% url 'indice' %}">Inicio</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'bienvenido' %}">Bienvenida</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'acerca' %}">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+                {% if user.is_authenticated %}
+        
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'logouta' %}">Cerrar sesión</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'login' %}">Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cafe_cuerpo" href="{% url 'registrar' %}">Registrarse</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

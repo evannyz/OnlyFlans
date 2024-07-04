@@ -1,0 +1,32 @@
+{% extends 'base/base.html'%}
+{% load static %}
+{% block pestanaweb %}
+<title>Inicio de onlyflans</title>
+{% endblock%}
+
+{% block webcontenido %}
+
+<br><br><br>
+<h3 class="text-center pb-3 cafe_cuerpo" >Postres</h3>
+
+<div class="container-fluid  pt-3">
+    <div class="row mx-auto justify-content-center">
+        {% for flan in flanes %}
+
+        <div class="card col-12 col-sm-12 col-md-6 col-lg-4 mb-4 mx-2 " style="width: 16rem;">
+            <img class=" rounded-pill pt-2" src="{{flan.image_url}}" height="150" >
+            <div class="card-body ">
+                <h5 class="card-title">{{flan.name}}</h5>
+                <p class="card-text">{{flan.description}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="">
+                    <p>Valor : ${{flan.price}}</p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

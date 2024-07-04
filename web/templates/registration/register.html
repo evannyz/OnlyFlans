@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block webcontenido %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+            <h2 class="text-center">Registro de nuevo usuario</h2>
+            <div>
+                <form method="post">
+                    {% csrf_token %}
+
+                    {{ form.non_field_errors }}
+
+                    <div class="mb-3 text-center">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">
+                            {{ form.username.label_tag }}
+                        </label>
+                        <div>
+                            {{ form.username }}
+                        </div>
+                        <div class="text-danger">
+                            {{ form.username.errors }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">
+                            {{ form.email.label_tag }}
+                        </label>
+                        <div>
+                            {{ form.email }}
+                        </div>
+                        <div class="text-danger">
+                            {{ form.email.errors }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <label for="{{ form.password1.id_for_label }}" class="form-label">
+                            {{ form.password1.label_tag }}
+                        </label>
+                        <div>
+                            {{ form.password1 }}
+                        </div>
+                        <div class="text-danger">
+                            {{ form.password1.errors }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <label for="{{ form.password2.id_for_label }}" class="form-label">
+                            {{ form.password2.label_tag }}
+                        </label>
+                        <div>
+                            {{ form.password2 }}
+                        </div>
+                        <div class="text-danger">
+                            {{ form.password2.errors }}
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn " style="background: #F5B03E;">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

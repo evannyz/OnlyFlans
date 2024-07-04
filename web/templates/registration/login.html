@@ -1,0 +1,39 @@
+{% extends '../base/base.html' %}
+
+{% block webcontenido %}
+<h2 class="cafe_cuerpo text-center">Login</h2>
+<form method="post">
+    {% csrf_token %}
+    
+    {% for field in form %}
+        <div class="mb-3 text-center">
+            <label for="{{ field.id_for_label }}" class="form-label">
+                {{ field.label_tag }}
+            </label>
+            <div>
+                {{ field }}
+            </div>
+            <div class="text-danger">
+                {{ field.errors }}
+            </div>
+        </div>
+    {% endfor %}
+    
+    <div class="text-center">
+        <button type="submit" class="btn" style="background: #F5B03E;">Login</button>
+    </div>
+    
+    {% if form.non_field_errors %}
+        <div class="error text-danger text-center">
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+</form>
+<br><br><br><br>
+<div class="text-center mt-4">
+    <p>¿Aún no eres miembro? <a href="{% url 'registrar' %}">Regístrate aquí.</a></p>
+</div>
+<br><br><br>
+{% endblock %}

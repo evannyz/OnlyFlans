@@ -1,0 +1,26 @@
+:root {
+    --main-bg-brown: #AF5711;
+    --main-bg-light-brown: #F5B03E;
+}
+
+.cafe_cuerpo {
+    font-family: "Roboto", sans-serif;
+    color: var(--main-bg-brown);
+}
+
+.cafe_liv {
+    background-color: var(--main-bg-light-brown);
+}
+.card {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
