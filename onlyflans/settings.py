@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 LOGIN_REDIRECT_URL = 'bienvenido'
-LOGIN_REDIRECT_URL = "indice"
+LOGOUT_REDIRECT_URL = "indice"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
