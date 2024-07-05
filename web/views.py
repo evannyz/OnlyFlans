@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Flan
-from .forms import  ContactFormModelForm, CustomUserCreationForm
+from .forms import  ContactFormModelForm, CustomUserCreationForm, FlanForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib.admin.views.decorators import staff_member_required
 
 
 # Vista para la página de inicio
@@ -59,4 +60,38 @@ def register(request):
 def registro_con_exito(request):
     return render(request, 'registro_exitoso.html')
 
+@staff_member_required
+def flan_list(request):
+    flanes = Flan.objects.all()
+    return render(request, 'flan_list.html', {'flanes': flanes})
 
+@staff_member_required
+def flan_create(request):
+    if request.method == 'POST':
+        form = FlanForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('flan_list')
+    else:
+        form = FlanForm()
+    return render(request, 'flan_form.html', {'form': form, 'is_edit': False})
+
+@staff_member_required
+def flan_update(request, pk):
+    flan = get_object_or_404(Flan, pk=pk)
+    if request.method == 'POST':
+        form = FlanForm(request.POST, instance=flan)
+        if form.is_valid():
+            form.save()
+            return redirect('flan_list')
+    else:
+        form = FlanForm(instance=flan)
+    return render(request, 'flan_form.html', {'form': form, 'is_edit': True})
+
+@staff_member_required
+def flan_delete(request, pk):
+    flan = get_object_or_404(Flan, pk=pk)
+    if request.method == 'POST':
+        flan.delete()
+        return redirect('flan_list')
+    return render(request, 'flan_confirm_delete.html', {'flan': flan})

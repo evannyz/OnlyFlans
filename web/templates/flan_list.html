@@ -1,32 +1,37 @@
-
 {% extends 'base/base.html' %}
-{% load static %}
 
 {% block webcontenido %}
 <div class="container">
-    <div class="row">
-        <div class="col-12 mt-4 mb-4">
-            <h3 class="text-center cafe_cuerpo">Lista de Flanes</h3>
-            <div class="text-center mb-4">
-                <a href="{% url 'web:flan_create' %}" class="btn" style="background: #F5B03E;">Crear Nuevo Flan</a>
-            </div>
-            <div class="row mx-auto justify-content-center">
-                {% for flan in flanes %}
-                <div class="card col-12 col-sm-12 col-md-6 col-lg-4 mb-4 mx-2" style="width: 16rem;">
-                    <img class="rounded-pill pt-2" src="{{ flan.image_url }}" height="150">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ flan.name }}</h5>
-                        <p class="card-text">{{ flan.description }}</p>
-                        <div class="d-flex justify-content-between align-items-end">
-                            <p>Valor: ${{ flan.price }}</p>
-                            <a href="{% url 'web:flan_detail' flan_uuid=flan.flan_uuid %}" class="btn btn-primary">Ver</a>
-                            <a href="{% url 'web:flan_update' flan_uuid=flan.flan_uuid %}" class="btn btn-secondary">Editar</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
+    <h1 class="mt-4">Lista de Flanes</h1>
+    <a href="{% url 'flan_create' %}" class="btn btn-primary my-3">Crear Nuevo Flan</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Slug</th>
+                <th>Privado</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flan in flanes %}
+                <tr>
+                    <td>{{ flan.name }}</td>
+                    <td>{{ flan.description }}</td>
+                    <td><img src="{{ flan.image_url }}" alt="{{ flan.name }}" width="50"></td>
+                    <td>{{ flan.slug }}</td>
+                    <td>{{ flan.is_private|yesno:"Sí,No" }}</td>
+                    <td>{{ flan.price }}</td>
+                    <td>
+                        <a href="{% url 'flan_update' flan.flan_uuid %}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'flan_delete' flan.flan_uuid %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

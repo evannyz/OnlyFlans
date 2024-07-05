@@ -36,6 +36,9 @@
                     <a class="nav-link cafe_cuerpo" href="{% url 'registrar' %}">Registrarse</a>
                 </li>
                 {% endif %}
+                {% if user.is_staff %}
+                <li class="nav-item"><a class="nav-link cafe_cuerpo" href="{% url 'flan_list' %}">Gestionar Flanes</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

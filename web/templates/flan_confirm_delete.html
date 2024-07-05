@@ -1,21 +1,13 @@
-
 {% extends 'base/base.html' %}
-{% load static %}
 
 {% block webcontenido %}
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
-            <h3 class="text-center cafe_cuerpo">Confirmar Eliminación</h3>
-            <p>¿Estás seguro de que deseas eliminar el flan <strong>{{ flan.name }}</strong>?</p>
-            <form action="{% url 'web:flan_delete' flan_uuid=flan.flan_uuid %}" method="POST">
-                {% csrf_token %}
-                <div class="text-center">
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                    <a href="{% url 'web:flan_detail' flan_uuid=flan.flan_uuid %}" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </form>
-        </div>
-    </div>
+    <h1 class="mt-4">Eliminar Flan</h1>
+    <p>¿Estás seguro de que quieres eliminar el flan "{{ flan.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'flan_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
 </div>
 {% endblock %}
