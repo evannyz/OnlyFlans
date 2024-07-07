@@ -4,6 +4,7 @@
 :root {
     --main-bg-brown: #AF5711;
     --main-bg-light-brown: #F5B03E;
+    --main-bg-ft-brown: #F7C876;
 }
 
 
@@ -74,4 +75,14 @@ body{
 }
 .solid_border{
     border: solid 4px black;
+}
+
+.cafe_pie{
+    color: var(--main-bg-light-brown) ;
+}
+
+.titulo_mini{
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+
 }

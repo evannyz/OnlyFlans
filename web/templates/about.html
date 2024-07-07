@@ -1,54 +1,99 @@
 {% extends 'base/base.html'%}
 {% block pestanaweb %}
+{% load static %}
 <title>Acerca de onlyflans</title>
 {% endblock%}
 
 {% block webcontenido %}
-
-<h3 class="text-center cafe_cuerpo fw-bold">Acerca de OnlyFlans</h3>
-
 <br><br><br>
+
+<h3 class="text-center titulo letra_cafe">Acerca de OnlyFlans</h3>
+
 <div class="container">
-    <p class="h4 cafe_cuerpo">¡Bienvenidos a OnlyFlans! Somos una tienda apasionada por ofrecerte el flan más delicioso
+    <p class="h4  titulo_mini text-center">¡Bienvenidos a OnlyFlans! Somos una tienda apasionada por ofrecerte el flan más delicioso
         y cremoso que puedas imaginar. En OnlyFlans, creemos que un buen flan puede alegrar cualquier día, y es por eso
         que nos dedicamos a crear una variedad de sabores y presentaciones que deleitarán tu paladar.</p>
 </div>
+<br><br><br>
 
-<h3 class="text-center cafe_cuerpo fw-bold">
-    Nuestra Historia
-</h3>
-<div class="container">
-    <p class="h4 cafe_cuerpo"><span class="fw-bold cafe_cuerpo">OnlyFlans</span> nació de un sueño familiar: compartir con el mundo nuestra
+<div class="d-flex justify-content-center">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{% static 'img/1940_INAUGURACION.png' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title titulo_mini letra_cafe">
+                        Nuestra Historia
+                    </h5>
+                    <p class="card-text cafe_cuerpo">
+                        <span class=" cafe_cuerpo">OnlyFlans</span> nació de un sueño familiar: compartir
+        con el mundo nuestra
         receta secreta de flan, que ha pasado de generación en generación. Desde nuestros humildes comienzos en una
         pequeña cocina casera, hemos crecido gracias al amor y apoyo de nuestros clientes, quienes han sido nuestra
-        mayor inspiración.</p>
+        mayor inspiración.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<h3 class="text-center cafe_cuerpo fw-bold">Nuestra Misión</h3>
-<div class="container">
-    <p class="h4 cafe_cuerpo">Nuestra misión es simple: ofrecer el mejor flan con los ingredientes más frescos y de la más alta calidad. Cada
-        flan que hacemos es una obra de amor y dedicación, preparada cuidadosamente para brindarte una experiencia
-        inolvidable en cada bocado.</p>
+<div class="d-flex justify-content-center">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{% static 'img/fifi_flan.jpg' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title titulo_mini letra_cafe">
+                        Nuestra Misión
+                    </h5>
+                    <p class="card-text">
+                        <span class="cafe_cuerpo">Nuestra misión es simple: ofrecer el mejor flan con los ingredientes más frescos y de la
+                            más alta calidad. Cada
+                            flan que hacemos es una obra de amor y dedicación, preparada cuidadosamente para brindarte una experiencia
+                            inolvidable en cada bocado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<h3 class="text-center cafe_cuerpo fw-bold">Nuestros Sabores</h3>
-<div class="container">
-    <p class="h4 cafe_cuerpo">En <span class="fw-bold cafe_cuerpo">OnlyFlans</span>, encontrarás una amplia variedad de sabores, desde los
-        clásicos como vainilla y caramelo hasta nuestras innovadoras creaciones que combinan ingredientes únicos y
-        sorprendentes. Siempre estamos experimentando y buscando nuevas formas de sorprenderte.</p>
+
+<div class="d-flex justify-content-center">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{% static 'img/mujer_flan.jpg' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title titulo_mini letra_cafe">
+                        Compromiso con la Calidad
+                    </h5>
+                    <p class="card-text">
+                        <span class="cafe_cuerpo">Nos enorgullecemos de utilizar solo los mejores ingredientes en nuestros productos.
+                            Creemos que la calidad es
+                            clave, y nos esforzamos por garantizar que cada flan que sale de nuestra tienda cumpla con los más altos
+                            estándares.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<h3 class="text-center cafe_cuerpo fw-bold">Compromiso con la Calidad</h3>
-<div class="container">
-    <p class="h4 cafe_cuerpo">Nos enorgullecemos de utilizar solo los mejores ingredientes en nuestros productos. Creemos que la calidad es
-        clave, y nos esforzamos por garantizar que cada flan que sale de nuestra tienda cumpla con los más altos
-        estándares.</p>
-</div>
 
-<h3 class="text-center cafe_cuerpo fw-bold">Gracias por Elegirnos</h3>
+
+<h3 class="text-center fw-bold titulo letra_cafe">¡¡Gracias por Elegirnos!!</h3>
 <div class="container">
-    <p class="h4 cafe_cuerpo">Agradecemos a cada uno de nuestros clientes por formar parte de la familia <span
-            class="fw-bold cafe_cuerpo">OnlyFlans</span>. Esperamos seguir endulzando tus días con nuestros deliciosos
+    <p class="h4 text-center titulo_mini let">Agradecemos a cada uno de nuestros clientes por formar parte de la familia <span
+            class="fw-bold cafe_cuerpo titulo_mini">OnlyFlans</span>. <br>Esperamos seguir endulzando tus días con nuestros deliciosos
         flanes y crear juntos muchos más recuerdos dulces.</p>
 </div>
 <br><br><br>
