@@ -3,11 +3,13 @@ from .models import ContactForm, Flan
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+# Formulario de contacto sin modelo
 class ContactFormForm(forms.Form):
     customer_email = forms.EmailField(label='Correo')
     customer_name = forms.CharField(max_length=64, label='Nombre')
     message = forms.CharField(label='Mensaje')
 
+# Formulario de contacto basado en un modelo
 class ContactFormModelForm(forms.ModelForm):
     class Meta:
         model = ContactForm
@@ -16,6 +18,7 @@ class ContactFormModelForm(forms.ModelForm):
             'customer_email': forms.EmailInput()
         }
 
+# Formulario de creación de usuario personalizado
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -30,7 +33,7 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 
-
+# Formulario para el modelo Flan
 class FlanForm(forms.ModelForm):
     class Meta:
         model = Flan
